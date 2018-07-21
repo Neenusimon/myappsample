@@ -1,0 +1,85 @@
+
+Deploy the web project to Azure
+
+In Solution Explorer, right-click the project, and choose Publish.
+Choose Publish in Visual Studio menu
+
+In a few seconds, the Publish Web wizard appears. The wizard opens to a publish profile that has settings for deploying the web project to the new web app.
+
+The publish profile includes a user name and password for deployment. These credentials have been generated for you, and you don't have to enter them. The password is encrypted in a hidden user-specific file in the Properties\PublishProfiles folder.
+On the Connection tab of the Publish Web wizard, click Next.
+
+Click Next on Connection tab of Publish Web wizard
+
+Next is the Settings tab. Here you can change the build configuration to deploy a debug build for remote debugging. The tab also offers several File Publish Options.
+
+On the Settings tab, click Next.
+
+Settings tab of Publish Web wizard
+
+The Preview tab is next. Here you have an opportunity to see what files are going to be copied from your project to the API app. When you're deploying a project to an API app that you already deployed to earlier, only changed files are copied. If you want to see a list of what will be copied, you can click the Start Preview button.
+
+On the Preview tab, click Publish.
+
+Preview tab of Publish Web wizard
+
+When you click Publish, Visual Studio begins the process of copying the files to the Azure server. This may take a minute or two.
+
+The Output and Azure App Service Activity windows show what deployment actions were taken and report successful completion of the deployment.
+
+Visual Studio Output window reporting successful deployment
+
+Upon successful deployment, the default browser automatically opens to the URL of the deployed web app, 
+and the application that you created is now running in the cloud. 
+The URL in the browser address bar shows that the web app is loaded from the Internet.
+
+Create VM
+
+Choose the VM image from the marketplace
+Consider a Windows Server 2012 R2 Datacenter image as an example.
+
+Sign in to the Azure portal.
+On the hub menu, click New > Compute > Windows Server 2012 R2 Datacenter.
+
+Screenshot that shows the Azure VM images available in the portal
+
+On the Windows Server 2012 R2 Datacenter blade, in Select a deployment model, verify that Resource Manager is selected. Click Create.
+
+Screenshot that shows the deployment model to select for the VM
+Create the Windows virtual machine
+After you select the image, you can use the default settings and quickly create the virtual machine.
+
+On the Basics blade, enter a Name for the virtual machine. The name must be 1-15 characters long and it cannot contain special characters.
+Enter a User name, and a strong Password that will be used to create a local account on the VM. The local account is used to sign in to and manage the VM.
+
+The password must be 8-123 characters long and meet three out of the four following complexity requirements: one lower case character, one upper case character, one number, and one special character. See more about username and password requirements.
+
+Select an existing Resource group or type the name for a new one. Type an Azure datacenter Location such as West US.
+When you are done, click OK to continue to the next section.
+
+Choose a VM size, and then click Select to continue.
+
+On the Settings blade, you can change the storage and network options. If you selected a virtual machine size that supports it, you can try Azure Premium Storage by selecting Premium (SSD) in Disk type. When you're done making changes, click OK.
+
+Click Summary to review your choices. When you see the Validation passed message, click OK.
+
+While Azure creates the virtual machine, you can track the progress in Virtual Machines on the hub menu.
+Connect to the virtual machine and sign on
+On the hub menu, click Virtual Machines.
+Select the virtual machine from the list.
+On the blade for the virtual machine, click Connect. This creates and downloads a Remote Desktop Protocol file (.rdp file) that is like a shortcut to connect to your machine.
+ You might want to save the file to your desktop for easy access. Open this file to connect to your VM.
+
+You get a warning that the .rdp is from an unknown publisher. This is normal. In the Remote Desktop window, click Connect to continue.
+
+In the Windows Security window, type the username and password for the local account that you created when you created the VM. The username is entered as vmname\username, then click OK.
+
+You get a warning that the certificate cannot be verified. This is normal. Click Yes to verify the identity of the virtual machine and finish logging on.
+
+If you run in to trouble when you try to connect, see Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine.
+
+You can now work with the virtual machine as you would with any other server.
+
+Create WEB API service
+http://www.c-sharpcorner.com/UploadFile/g_arora/Asp-Net-web-api-create-deploy-to-azure-and-manage-using-az/
+
